@@ -1,0 +1,201 @@
+{
+  "baseline": {
+    "global_weight": 0.15,
+    "macro_f1": 0.7802972725585414
+  },
+  "nested": {
+    "cross_fitted_macro_f1": 0.7808495376851168,
+    "cross_fitted_gain": 0.0005522651265753575,
+    "mean_fold_gain": 0.0005485164340069514,
+    "min_fold_gain": 2.2981585222736634e-05,
+    "max_fold_gain": 0.0010165619701522077,
+    "positive_folds": 5,
+    "total_folds": 5
+  },
+  "outer_records": [
+    {
+      "fold": 0,
+      "tune_macro_f1": 0.7821297059987027,
+      "baseline_eval_macro_f1": 0.7802920737909694,
+      "candidate_eval_macro_f1": 0.7803150553761922,
+      "gain": 2.2981585222736634e-05,
+      "changed_rows": 178,
+      "weights": {
+        "read_file": 0.0,
+        "grep_search": 0.15,
+        "list_directory": 0.25,
+        "glob_pattern": 0.1,
+        "edit_file": 0.15,
+        "write_file": 0.25,
+        "apply_patch": 0.1,
+        "run_bash": 0.15,
+        "run_tests": 0.25,
+        "lint_or_typecheck": 0.2,
+        "ask_user": 0.3,
+        "plan_task": 0.2,
+        "web_search": 0.3,
+        "respond_only": 0.15
+      }
+    },
+    {
+      "fold": 1,
+      "tune_macro_f1": 0.7822121054739564,
+      "baseline_eval_macro_f1": 0.7776721140419206,
+      "candidate_eval_macro_f1": 0.7782351515950979,
+      "gain": 0.0005630375531773257,
+      "changed_rows": 178,
+      "weights": {
+        "read_file": 0.0,
+        "grep_search": 0.15,
+        "list_directory": 0.25,
+        "glob_pattern": 0.1,
+        "edit_file": 0.15,
+        "write_file": 0.25,
+        "apply_patch": 0.1,
+        "run_bash": 0.3,
+        "run_tests": 0.3,
+        "lint_or_typecheck": 0.15,
+        "ask_user": 0.3,
+        "plan_task": 0.25,
+        "web_search": 0.15,
+        "respond_only": 0.15
+      }
+    },
+    {
+      "fold": 2,
+      "tune_macro_f1": 0.7809707002402035,
+      "baseline_eval_macro_f1": 0.7832327934907312,
+      "candidate_eval_macro_f1": 0.7839991221765101,
+      "gain": 0.000766328685778972,
+      "changed_rows": 156,
+      "weights": {
+        "read_file": 0.05,
+        "grep_search": 0.15,
+        "list_directory": 0.3,
+        "glob_pattern": 0.2,
+        "edit_file": 0.2,
+        "write_file": 0.3,
+        "apply_patch": 0.05,
+        "run_bash": 0.3,
+        "run_tests": 0.15,
+        "lint_or_typecheck": 0.2,
+        "ask_user": 0.3,
+        "plan_task": 0.2,
+        "web_search": 0.3,
+        "respond_only": 0.15
+      }
+    },
+    {
+      "fold": 3,
+      "tune_macro_f1": 0.7811102895042644,
+      "baseline_eval_macro_f1": 0.7828218948610232,
+      "candidate_eval_macro_f1": 0.7831955672367267,
+      "gain": 0.0003736723757035154,
+      "changed_rows": 109,
+      "weights": {
+        "read_file": 0.05,
+        "grep_search": 0.15,
+        "list_directory": 0.3,
+        "glob_pattern": 0.05,
+        "edit_file": 0.15,
+        "write_file": 0.25,
+        "apply_patch": 0.1,
+        "run_bash": 0.2,
+        "run_tests": 0.1,
+        "lint_or_typecheck": 0.15,
+        "ask_user": 0.2,
+        "plan_task": 0.15,
+        "web_search": 0.3,
+        "respond_only": 0.15
+      }
+    },
+    {
+      "fold": 4,
+      "tune_macro_f1": 0.782663859770461,
+      "baseline_eval_macro_f1": 0.7774054517174452,
+      "candidate_eval_macro_f1": 0.7784220136875974,
+      "gain": 0.0010165619701522077,
+      "changed_rows": 154,
+      "weights": {
+        "read_file": 0.0,
+        "grep_search": 0.15,
+        "list_directory": 0.15,
+        "glob_pattern": 0.1,
+        "edit_file": 0.2,
+        "write_file": 0.3,
+        "apply_patch": 0.05,
+        "run_bash": 0.15,
+        "run_tests": 0.3,
+        "lint_or_typecheck": 0.1,
+        "ask_user": 0.2,
+        "plan_task": 0.2,
+        "web_search": 0.3,
+        "respond_only": 0.15
+      }
+    }
+  ],
+  "student_fold0": {
+    "weights_source": "outer_fold0_tune_only",
+    "baseline_macro_f1": 0.7851943020033714,
+    "candidate_macro_f1": 0.7853777213872046,
+    "gain": 0.00018341938383326095,
+    "changed_rows": 165,
+    "weights": {
+      "read_file": 0.0,
+      "grep_search": 0.15,
+      "list_directory": 0.25,
+      "glob_pattern": 0.1,
+      "edit_file": 0.15,
+      "write_file": 0.25,
+      "apply_patch": 0.1,
+      "run_bash": 0.15,
+      "run_tests": 0.25,
+      "lint_or_typecheck": 0.2,
+      "ask_user": 0.3,
+      "plan_task": 0.2,
+      "web_search": 0.3,
+      "respond_only": 0.15
+    }
+  },
+  "consensus_reference": {
+    "macro_f1": 0.7816295056546512,
+    "gain": 0.0013322330961097473,
+    "weights": {
+      "read_file": 0.0,
+      "grep_search": 0.15,
+      "list_directory": 0.25,
+      "glob_pattern": 0.1,
+      "edit_file": 0.15,
+      "write_file": 0.25,
+      "apply_patch": 0.1,
+      "run_bash": 0.2,
+      "run_tests": 0.25,
+      "lint_or_typecheck": 0.15,
+      "ask_user": 0.3,
+      "plan_task": 0.2,
+      "web_search": 0.3,
+      "respond_only": 0.15
+    }
+  },
+  "full_data_reference": {
+    "macro_f1": 0.7818118783768069,
+    "gain": 0.0015146058182654576,
+    "weights": {
+      "read_file": 0.0,
+      "grep_search": 0.15,
+      "list_directory": 0.25,
+      "glob_pattern": 0.1,
+      "edit_file": 0.15,
+      "write_file": 0.25,
+      "apply_patch": 0.1,
+      "run_bash": 0.15,
+      "run_tests": 0.25,
+      "lint_or_typecheck": 0.2,
+      "ask_user": 0.2,
+      "plan_task": 0.2,
+      "web_search": 0.3,
+      "respond_only": 0.15
+    }
+  },
+  "verdict": "DISCARD"
+}

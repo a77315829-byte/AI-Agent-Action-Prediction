@@ -1,0 +1,35 @@
+{
+  "data": "/mnt/data/train.jsonl",
+  "labels": "/mnt/data/train_labels.csv",
+  "samples": 70000,
+  "seed": 42,
+  "n_splits": 5,
+  "fold": 0,
+  "train_samples": 55999,
+  "validation_samples": 14001,
+  "classes": [
+    "read_file",
+    "grep_search",
+    "list_directory",
+    "glob_pattern",
+    "edit_file",
+    "write_file",
+    "apply_patch",
+    "run_bash",
+    "run_tests",
+    "lint_or_typecheck",
+    "ask_user",
+    "plan_task",
+    "web_search",
+    "respond_only"
+  ],
+  "outputs": [
+    "label_distribution.csv",
+    "collision_summary.csv",
+    "top_conflict_groups.csv",
+    "class_collision_summary.csv",
+    "fold_0_indices.csv",
+    "template_lookup_thresholds.csv",
+    "template_lookup_predictions_count3_conf098.csv"
+  ]
+}

@@ -1,0 +1,19 @@
+﻿experiment,evaluation_scope,local_result,public_macro_f1,decision,notes
+V23 Qwen + Tree,public,,0.7870583827,previous_best,Qwen + LightGBM blend
+cur160 rebuilt,public,,0.7888347480,discard,Training realization differed from exact best
+cur160 exact,public,,0.7893958473,final,Exact highest-scoring package
+Tree weight 0.10,public,,0.7890965708,discard,Below weight 0.15
+Tree weight 0.15,public,,0.7893958473,final,Best global Tree weight
+Tree weight 0.20,public,,0.7886778450,discard,Overweighted Tree
+Teacher 50:50 blend,public,OOF 0.784169,0.7893696524,discard,Near tie but below exact cur160
+cur160 soup,public,,0.7893124612,discard,Below exact cur160
+Selective teacher,public,,0.7887775583,discard,Selective intervention failed
+Postprocess candidate,public,,0.7888850680,discard,Postprocess did not generalize
+V27 gated Tree,public,eval 0.783466,0.7881191369,discard,Gate did not transfer to full student
+Qwen 1.5B,validation,about 0.7745,,discard,Lower validation and package-size risk
+Viterbi transition,oof_and_public,OOF gain about +0.0068,same as baseline,discard,Local sample test had no multi-step sessions
+Last-action prior,nested_oof,full +0.000930; nested mean +0.000352,,discard,Too small and one negative outer fold
+Second view current-heavy,student_fold0,best gain -0.000030,,discard,No positive neighborhood
+Second view history-heavy,student_fold0,best gain -0.000441,,discard,Alternate view weaker
+Second view action-heavy,student_fold0,best gain -0.000690,,discard,Alternate view weaker
+Classwise Tree blend,nested_and_student,nested +0.000549; student +0.000183,,discard,Consistent direction but insufficient magnitude

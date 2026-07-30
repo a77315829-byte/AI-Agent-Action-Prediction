@@ -1,0 +1,162 @@
+{
+  "samples": 70000,
+  "sim_samples": 64975,
+  "au_samples": 5025,
+  "validation_samples": 14001,
+  "qwen_macro_f1": 0.779135114277816,
+  "qwen_performance_by_source": [
+    {
+      "source": "au",
+      "samples": 1074,
+      "accuracy": 0.952513966480447,
+      "macro_f1_14class": 0.9500714943800805,
+      "explore_samples": 422,
+      "explore_accuracy": 0.9265402843601895,
+      "explore_macro_f1": 0.9220115273429059
+    },
+    {
+      "source": "sim",
+      "samples": 12927,
+      "accuracy": 0.7617389959000541,
+      "macro_f1_14class": 0.7641300534961016,
+      "explore_samples": 5334,
+      "explore_accuracy": 0.5894263217097863,
+      "explore_macro_f1": 0.5934618174695361
+    }
+  ],
+  "exploration_chain": [
+    {
+      "second_last_action": "list_directory",
+      "expected_current_action": "read_file",
+      "samples": 1762,
+      "rate": 0.6486946651532349
+    },
+    {
+      "second_last_action": "read_file",
+      "expected_current_action": "grep_search",
+      "samples": 2551,
+      "rate": 0.8494707957663661
+    },
+    {
+      "second_last_action": "grep_search",
+      "expected_current_action": "glob_pattern",
+      "samples": 3300,
+      "rate": 0.8184848484848485
+    }
+  ],
+  "best_lookup_predictability": {
+    "keys": "last2",
+    "samples": 5334,
+    "accuracy": 0.5791151106111736,
+    "macro_f1": 0.5793403296934958,
+    "coverage": 1.0,
+    "average_train_confidence": 0.577675315862183
+  },
+  "pooled_best_rule": {
+    "keys": "last_action+step",
+    "min_train_confidence": 0.5,
+    "max_qwen_explore_margin": 0.1,
+    "changed_samples": 134,
+    "macro_f1": 0.7798443330728405
+  },
+  "pooled_rule_improvement": 0.0007092187950245021,
+  "nested_rule_macro_f1": 0.7793096276756858,
+  "nested_rule_improvement": 0.00017451339786977993,
+  "nested_selected_rules": [
+    {
+      "keys": "last2",
+      "min_train_confidence": 0.7,
+      "max_qwen_explore_margin": 1.0,
+      "changed_samples": 20,
+      "macro_f1": 0.7794595366438115,
+      "fold": 0,
+      "selection_macro_f1": 0.7804949185498347,
+      "held_samples": 2801
+    },
+    {
+      "keys": "last_action+step",
+      "min_train_confidence": 0.5,
+      "max_qwen_explore_margin": 0.1,
+      "changed_samples": 134,
+      "macro_f1": 0.7798443330728405,
+      "fold": 1,
+      "selection_macro_f1": 0.7776619871640761,
+      "held_samples": 2801
+    },
+    {
+      "keys": "last_action+step",
+      "min_train_confidence": 0.5,
+      "max_qwen_explore_margin": 0.1,
+      "changed_samples": 134,
+      "macro_f1": 0.7798443330728405,
+      "fold": 2,
+      "selection_macro_f1": 0.7817689312333309,
+      "held_samples": 2800
+    },
+    {
+      "keys": "last_action+step",
+      "min_train_confidence": 0.5,
+      "max_qwen_explore_margin": 0.1,
+      "changed_samples": 134,
+      "macro_f1": 0.7798443330728405,
+      "fold": 3,
+      "selection_macro_f1": 0.7801725806014496,
+      "held_samples": 2800
+    },
+    {
+      "keys": "last_action+step",
+      "min_train_confidence": 0.5,
+      "max_qwen_explore_margin": 0.1,
+      "changed_samples": 134,
+      "macro_f1": 0.7798443330728405,
+      "fold": 4,
+      "selection_macro_f1": 0.7793319260662109,
+      "held_samples": 2799
+    }
+  ],
+  "fixed_chain_rule": {
+    "condition": "source=sim AND qwen_family=explore AND second_last_action=list_directory AND qwen_prediction!=read_file",
+    "changed_samples": 28,
+    "macro_f1": 0.7795566833377657,
+    "improvement": 0.0004215690599497224,
+    "fold_results": [
+      {
+        "fold": 0,
+        "baseline_macro_f1": 0.7748729128182159,
+        "fixed_rule_macro_f1": 0.775269142532344,
+        "improvement": 0.0003962297141281157,
+        "changed_samples": 3
+      },
+      {
+        "fold": 1,
+        "baseline_macro_f1": 0.7884329697908742,
+        "fixed_rule_macro_f1": 0.7890760446163912,
+        "improvement": 0.0006430748255170649,
+        "changed_samples": 8
+      },
+      {
+        "fold": 2,
+        "baseline_macro_f1": 0.7706157439326508,
+        "fixed_rule_macro_f1": 0.7708776190612427,
+        "improvement": 0.0002618751285919929,
+        "changed_samples": 6
+      },
+      {
+        "fold": 3,
+        "baseline_macro_f1": 0.7790357804694173,
+        "fixed_rule_macro_f1": 0.7786149510904236,
+        "improvement": -0.00042082937899379225,
+        "changed_samples": 4
+      },
+      {
+        "fold": 4,
+        "baseline_macro_f1": 0.7830747634236349,
+        "fixed_rule_macro_f1": 0.784307855706128,
+        "improvement": 0.0012330922824931312,
+        "changed_samples": 7
+      }
+    ]
+  },
+  "recommendation": "Keep the fixed list_directory(t-2)->read_file(t) rule as a low-risk candidate. Do not use the pooled generic rule without additional out-of-fold confirmation.",
+  "elapsed_seconds": 10.718891699973028
+}

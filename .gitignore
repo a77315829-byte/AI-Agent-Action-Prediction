@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+venv*/
+env/
+conda-meta/
+
+# Competition data
+data/
+datasets/
+*.jsonl
+train_labels.csv
+sample_submission.csv
+
+# Models and large artifacts
+model/
+models/
+checkpoints/
+adapters/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+*.npy
+*.npz
+*.pkl
+*.joblib
+
+# Submission/build artifacts
+_submit*/
+submit*/
+_build*/
+build/
+dist/
+*.zip
+submission.csv
+
+# Runtime output
+output/
+outputs/
+logs/
+*.log
+diag_*/
+tmp/
+temp/
+
+# Local model/tokenizer artifacts
+adapter_config.json
+adapter_model.*
+trainer_state.json
+tokenizer.json
+tokenizer_config.json
+special_tokens_map.json
+added_tokens.json
+merges.txt
+vocab.json
+
+# Secrets
+.env
+.env.*
+!.env.example
+*secret*
+*token*
+*api_key*
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

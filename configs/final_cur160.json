@@ -1,0 +1,26 @@
+{
+  "architecture": "qwen_distill_v12",
+  "base_model": "Qwen2.5-Coder-0.5B",
+  "train_samples": 70000,
+  "validation": {
+    "type": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "seed": 42,
+    "group_rule": "sample id before -step_"
+  },
+  "training": {
+    "full_max_updates": 3500,
+    "head_lr": 0.0004,
+    "lora_lr": 2e-05
+  },
+  "postprocess": {
+    "action_temperature": 1.4,
+    "family_weight": 1.25,
+    "prior_beta": -0.85
+  },
+  "tree_blend": {
+    "type": "log_probability_blend",
+    "weight": 0.15
+  },
+  "public_macro_f1": 0.7893958473
+}

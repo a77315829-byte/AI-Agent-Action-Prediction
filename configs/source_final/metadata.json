@@ -1,0 +1,85 @@
+{
+  "architecture": "qwen_distill_v12",
+  "base_model": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+  "initialized_from": "model/qwen_segment_v4",
+  "classes": [
+    "read_file",
+    "grep_search",
+    "list_directory",
+    "glob_pattern",
+    "edit_file",
+    "write_file",
+    "apply_patch",
+    "run_bash",
+    "run_tests",
+    "lint_or_typecheck",
+    "ask_user",
+    "plan_task",
+    "web_search",
+    "respond_only"
+  ],
+  "families": [
+    "explore",
+    "modify",
+    "execute",
+    "dialog",
+    "external"
+  ],
+  "structured_dim": 95,
+  "mode": "full",
+  "eval_fold": 0,
+  "train_samples": 70000,
+  "validation_samples": 0,
+  "loss_weights": {
+    "hard_final": 0.7,
+    "hard_action": 0.35,
+    "family": 0.25,
+    "distill_final": 0.55,
+    "distill_action": 0.15,
+    "distill_family": 0.1,
+    "teacher_ce": 0.1,
+    "temperature": 2.0
+  },
+  "learning_rates": {
+    "head_lr": 0.0004,
+    "lora_lr": 2e-05,
+    "freeze_lora": false
+  },
+  "initial_validation_macro_f1": null,
+  "epoch_records": [
+    {
+      "epoch": 1,
+      "global_update": 2188,
+      "loss": {
+        "total": 0.7006070217218783,
+        "hard_final": 0.4926713264833604,
+        "hard_action": 0.4785526536382722,
+        "family": 0.021683650934366597,
+        "distill_final": 0.21433363944510264,
+        "distill_action": 0.20985446730671184,
+        "distill_family": 0.10707952439639984,
+        "teacher_ce": 0.22753131246047892
+      }
+    },
+    {
+      "epoch": 2,
+      "global_update": 3500,
+      "loss": {
+        "total": 0.5923435631731281,
+        "hard_final": 0.4479242433681509,
+        "hard_action": 0.42473572268406823,
+        "family": 0.02028746806378156,
+        "distill_final": 0.1355180572943759,
+        "distill_action": 0.1658364747925633,
+        "distill_family": 0.06249100266523317,
+        "teacher_ce": 0.19407723312311956
+      }
+    }
+  ],
+  "best_epoch": 2,
+  "final_summary": {
+    "mode": "full",
+    "global_updates": 3500,
+    "note": "Full training has no local validation score. Submit only after eval-mode validation is promising."
+  }
+}
